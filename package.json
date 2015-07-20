@@ -1,6 +1,6 @@
 {
   "name": "jenkins-js-test",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "NPM module containing JavaScript utilities for testing Jenkins CI modules.",
   "main": "index.js",
   "scripts": {
@@ -13,10 +13,12 @@
     "url": "https://github.com/tfennelly/jenkins-js-test"
   },
   "dependencies": {
+    "bootstrap-detached-3.3": "^3.3.4-v5",
     "gulp": "^3.8.11",
     "gulp-jasmine": "^2.0.1",
     "jasmine-reporters": "^2.0.6",
     "jquery-detached-2.1.4": "^2.1.4-v2",
+    "jqueryui-detached-1.11": "^1.11.4-v4",
     "jsdom": "3.1.2",
     "window-handle": "0.0.6"
   }
