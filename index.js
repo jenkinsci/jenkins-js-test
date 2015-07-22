@@ -1,5 +1,4 @@
 var jsdom = require("jsdom");
-var builder = require('jenkins-js-builder');
 var _string = require('underscore.string');
 var fs = require('fs');
 
@@ -11,6 +10,8 @@ exports.onPage = function(testFunc, content) {
     } else {
         content = _string.trim(content);
         if (!(_string.startsWith(content, '<') && _string.endsWith(content, '>'))) {
+            var builder = global.jenkinsBuilder;
+            
             // This isn't markup, so lets see can we load it as a test resource.
             var basePath = process.cwd() + '/' + builder.tests();
             var path = basePath + '/' + content;
@@ -59,5 +60,5 @@ exports.requireSrcModule = function(moduleName) {
     if (theModule) {
         return theModule;
     }    
-    return tryModule(builder.src());
+    return tryModule(global.jenkinsBuilder.src());
 }
