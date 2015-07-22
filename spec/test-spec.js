@@ -4,6 +4,16 @@ var _string = require('underscore.string');
 
 describe("onPage test", function () {
 
+    it("- inline html", function (done) {
+        jsTest.onPage(function() {
+            var $ = jQuery.getJQuery();
+            
+            expect(_string.trim($('body').text())).toBe('Inline body!!');
+            
+            done();
+        }, '<html><body>Inline body!!</body></html>');
+    });
+
     it("- load test res file", function (done) {
         jsTest.onPage(function() {
             var $ = jQuery.getJQuery();

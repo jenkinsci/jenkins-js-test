@@ -10,7 +10,7 @@ exports.onPage = function(testFunc, content) {
         content = DEFAULT_PAGE;
     } else {
         content = _string.trim(content);
-        if (!(_string.startsWith(content, '<') && _string.endsWith(content, '<'))) {
+        if (!(_string.startsWith(content, '<') && _string.endsWith(content, '>'))) {
             // This isn't markup, so lets see can we load it as a test resource.
             var basePath = process.cwd() + '/' + builder.tests();
             var path = basePath + '/' + content;
