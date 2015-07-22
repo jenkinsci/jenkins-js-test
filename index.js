@@ -45,9 +45,12 @@ exports.onPage = function(testFunc, content) {
 
 exports.requireSrcModule = function(moduleName) {
     function tryModule(inDir) {
-        var path = process.cwd() + '/' + inDir + '/' + moduleName + '.js';
+        var path = process.cwd() + '/' + inDir + '/' + moduleName;
         if (!fs.existsSync(path)) {
-            return;
+            path += '.js';
+            if (!fs.existsSync(path)) {
+                return;
+            }
         }
         return require(path);        
     }

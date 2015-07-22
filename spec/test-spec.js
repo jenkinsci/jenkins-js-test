@@ -14,7 +14,7 @@ describe("onPage test", function () {
         }, 'res.html');
     });
 
-    it("- requireSrcModule", function (done) {
+    it("- requireSrcModule module file", function (done) {
         jsTest.onPage(function() {
             var testMod = jsTest.requireSrcModule('testMod');
             
@@ -23,6 +23,16 @@ describe("onPage test", function () {
             // should also work when ref'd relative to the cwd
             testMod = jsTest.requireSrcModule('js/testMod');            
             expect(testMod.hello()).toBe('Hello world');            
+            
+            done();
+        }, 'res.html');
+    });
+
+    it("- requireSrcModule module folder", function (done) {
+        jsTest.onPage(function() {
+            var mod = jsTest.requireSrcModule('modFolder');
+            
+            expect(mod.hello2()).toBe('Hello world 2');
             
             done();
         }, 'res.html');
