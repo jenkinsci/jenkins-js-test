@@ -16,7 +16,7 @@ exports.onPage = function(testFunc, content) {
             var basePath = process.cwd() + '/' + builder.tests();
             var path = basePath + '/' + content;
             
-            builder.logInfo("Supplied 'content' doesn't look like html. Will attempt to load as fs resource '" + path + "'.");
+            builder.logInfo("Loading test content from fs resource '" + path + "'.");
             if (fs.existsSync(path)) {
                 content = fs.readFileSync(path, 'utf-8');
             } else {
