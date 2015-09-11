@@ -2,7 +2,7 @@ var jsdom = require("jsdom");
 var _string = require('underscore.string');
 var fs = require('fs');
 
-var DEFAULT_PAGE = '<html><head></head><body></body></html>';
+var DEFAULT_PAGE = '<html><head data-rooturl="/jenkins" data-resurl="/static/908d75c1"></head><body></body></html>';
 
 exports.onPage = function(testFunc, content) {
     if (!content) {
