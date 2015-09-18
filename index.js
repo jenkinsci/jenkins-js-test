@@ -32,6 +32,8 @@ exports.onPage = function(testFunc, content) {
                 };
             }
             require("window-handle").setWindow(window);
+            global.window = window;
+            global.document = window.document;            
             
             // A new "window" instance is created for each test, so we need to clear anything
             // that could be created from that, forcing recreate for the new window instance.
