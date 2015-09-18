@@ -62,6 +62,10 @@ exports.requireSrcModule = function(moduleName) {
     var theModule = tryModule('');
     if (theModule) {
         return theModule;
-    }    
-    return tryModule(global.jenkinsBuilder.src());
+    }
+    
+    if (global.jenkinsBuilder) {
+        return tryModule(global.jenkinsBuilder.src());
+    }
+    return undefined;
 }

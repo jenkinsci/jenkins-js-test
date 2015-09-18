@@ -1,6 +1,6 @@
 {
   "name": "jenkins-js-test",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "NPM module containing JavaScript utilities for testing Jenkins CI modules.",
   "main": "index.js",
   "scripts": {
