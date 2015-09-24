@@ -2,11 +2,9 @@ var jsdom = require("jsdom");
 var _string = require('underscore.string');
 var fs = require('fs');
 
-var DEFAULT_PAGE = '<html><head data-rooturl="/jenkins" data-resurl="/static/908d75c1"></head><body></body></html>';
-
 exports.onPage = function(testFunc, content) {
     if (!content) {
-        content = DEFAULT_PAGE;
+        content = '<html><head data-rooturl="/jenkins" data-resurl="/static/908d75c1"></head><body></body></html>';
     } else {
         content = _string.trim(content);
         if (!(_string.startsWith(content, '<') && _string.endsWith(content, '>'))) {
@@ -55,7 +53,7 @@ exports.requireSrcModule = function(moduleName) {
         if (!fs.existsSync(path)) {
             path += '.js';
             if (!fs.existsSync(path)) {
-                return;
+                return undefined;
             }
         }
         return require(path);        
@@ -67,7 +65,13 @@ exports.requireSrcModule = function(moduleName) {
     }
     
     if (global.jenkinsBuilder) {
-        return tryModule(global.jenkinsBuilder.src());
+        var stcPaths = global.jenkinsBuilder.src();
+        for (var i in stcPaths) {
+            var module = tryModule(stcPaths[i]);
+            if (module) {
+                return module;
+            }
+        }
     }
     return undefined;
 }
