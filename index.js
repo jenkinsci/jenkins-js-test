@@ -36,8 +36,10 @@ exports.onPage = function(testFunc, content) {
             // A new "window" instance is created for each test, so we need to clear anything
             // that could be created from that, forcing recreate for the new window instance.
             require("jquery-detached").clearSharedJQuery();
+            require("jquery-detached").getJQuery().ready();
             require("jqueryui-detached").clear();
             require("bootstrap-detached").clear();
+            require("bootstrap-detached").getBootstrap().ready();
             require("jquery-detached-2.1.4").clearSharedJQuery();
             require("jqueryui-detached-1.11").clear();
             require("bootstrap-detached-3.3").clear();
