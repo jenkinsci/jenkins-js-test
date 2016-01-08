@@ -55,7 +55,11 @@ var jsTest = require("jenkins-js-test");
 var mathUtil = jsTest.requireSrcModule('utils/mathUtil');
 ```
 
-> NOTE: This is integrated with [jenkins-js-builder]. It will resolve the module being `require`d based on [src/test builder configuration](https://github.com/jenkinsci/js-builder#setting-src-and-test-spec-paths).  
+> NOTE: This is integrated with [jenkins-js-builder]. It will resolve the module being `require`d based on [src/test builder configuration](https://github.com/jenkinsci/js-builder#setting-src-and-test-spec-paths).
+  
+# Examples
+See the examples in [js-samples](https://github.com/jenkinsci/js-samples), especially `step-07-jsdom-tests` and `step-08-zombie-tests`.
+  
 
 [jsdom]: https://github.com/tmpvar/jsdom
 [jenkins-js-modules]: https://github.com/jenkinsci/js-modules
