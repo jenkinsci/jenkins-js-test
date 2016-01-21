@@ -1,3 +1,1 @@
-var builder = require('jenkins-js-builder');
-
-builder.defineTasks();
+require('jenkins-js-builder');
