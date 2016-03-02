@@ -1,5 +1,5 @@
 {
-  "name": "jenkins-js-test",
+  "name": "@jenkins-cd/js-test",
   "version": "1.0.1",
   "description": "NPM module containing JavaScript utilities for testing Jenkins CI modules.",
   "main": "index.js",
@@ -18,7 +18,7 @@
     "gulp": "^3.8.11",
     "gulp-jasmine": "^2.0.1",
     "jasmine-reporters": "^2.0.6",
-    "jenkins-js-builder": "0.0.40",
+    "@jenkins-cd/js-builder": "^0.x",
     "jquery-detached": "^2.1.4-v2",
     "jquery-detached-2.1.4": "^2.1.4-v2",
     "jqueryui-detached": "^1.11.4-v8",

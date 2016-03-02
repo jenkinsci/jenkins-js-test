@@ -14,11 +14,11 @@ exports.onPage = function(testFunc, content) {
             var basePath = process.cwd() + '/' + builder.tests();
             var path = basePath + '/' + content;
             
-            builder.logInfo("Loading test content from fs resource '" + path + "'.");
+            builder.logger.logInfo("Loading test content from fs resource '" + path + "'.");
             if (fs.existsSync(path)) {
                 content = fs.readFileSync(path, 'utf-8');
             } else {
-                builder.logInfo("fs resource '" + path + "' doesn't exist. Will pass 'content' as is to jsdom.");
+                builder.logger.logInfo("fs resource '" + path + "' doesn't exist. Will pass 'content' as is to jsdom.");
             }
         }
     }

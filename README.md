@@ -5,10 +5,10 @@ This package provides some test utilities.
 Install Package:
 
 ```
-npm install --save-dev jenkins-js-test
+npm install --save-dev @jenkins-cd/js-test
 ```
 
-> Also see [jenkins-js-modules] and [jenkins-js-builder].
+> Also see [js-modules] and [js-builder].
 
 # onPage
 This utility allows you to test some content using [jsdom] (a lightweight "headless" browser).
@@ -16,7 +16,7 @@ This utility allows you to test some content using [jsdom] (a lightweight "headl
 Here's an example from the [Twitter Bootstrap](https://github.com/jenkinsci/js-libs/tree/master/bootstrap) [Framework lib].
 
 ```javascript
-var jsTest = require("jenkins-js-test");
+var jsTest = require("@jenkins-cd/js-test");
 
 var JENKINS_PAGE = '<html><head resURL="/jenkins"></head><body><div id="divOnPage">Bootstrap is everywhere</div></body></html>';
 
@@ -50,20 +50,20 @@ var mathUtil = require('../../../src/js/utils/mathUtil');
 Using `requireSrcModule`, the above code would be:
  
 ```javascript
-var jsTest = require("jenkins-js-test");
+var jsTest = require("@jenkins-cd/js-test");
 
 var mathUtil = jsTest.requireSrcModule('utils/mathUtil');
 ```
 
-> NOTE: This is integrated with [jenkins-js-builder]. It will resolve the module being `require`d based on [src/test builder configuration](https://github.com/jenkinsci/js-builder#setting-src-and-test-spec-paths).
+> NOTE: This is integrated with [js-builder]. It will resolve the module being `require`d based on [src/test builder configuration](https://github.com/jenkinsci/js-builder#setting-src-and-test-spec-paths).
   
 # Examples
 See the examples in [js-samples](https://github.com/jenkinsci/js-samples), especially `step-07-jsdom-tests` and `step-08-zombie-tests`.
   
 
 [jsdom]: https://github.com/tmpvar/jsdom
-[jenkins-js-modules]: https://github.com/jenkinsci/js-modules
-[jenkins-js-builder]: https://github.com/jenkinsci/js-builder
+[js-modules]: https://github.com/jenkinsci/js-modules
+[js-builder]: https://github.com/jenkinsci/js-builder
 [Framework lib]: https://github.com/jenkinsci/js-libs
 [Jasmine]: http://jasmine.github.io/
 [bundle]: https://github.com/jenkinsci/js-modules/blob/master/FAQs.md#what-is-the-difference-between-a-module-and-a-bundle
