@@ -4,7 +4,7 @@ var fs = require('fs');
 
 exports.onPage = function(testFunc, content) {
     if (!content) {
-        content = '<html><head data-rooturl="/jenkins" data-resurl="/static/908d75c1"></head><body></body></html>';
+        content = '<html><head data-rooturl="/jenkins" data-resurl="/static/908d75c1" data-adjuncturl="/adjuncts/908d75c1"></head><body></body></html>';
     } else {
         content = _string.trim(content);
         if (!(_string.startsWith(content, '<') && _string.endsWith(content, '>'))) {
@@ -77,4 +77,4 @@ exports.requireSrcModule = function(moduleName) {
         }
     }
     return undefined;
-}
+};
