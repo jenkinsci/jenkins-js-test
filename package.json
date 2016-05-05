@@ -1,6 +1,6 @@
 {
   "name": "@jenkins-cd/js-test",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "NPM module containing JavaScript utilities for testing Jenkins CI modules.",
   "main": "index.js",
   "scripts": {

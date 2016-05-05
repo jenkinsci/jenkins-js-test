@@ -4,7 +4,12 @@ var fs = require('fs');
 
 exports.onPage = function(testFunc, content) {
     if (!content) {
-        content = '<html><head data-rooturl="/jenkins" data-resurl="/static/908d75c1" data-adjuncturl="/adjuncts/908d75c1"></head><body></body></html>';
+        content = '<html><head data-rooturl="@JENKINS_URL@" data-resurl="@JENKINS_URL@/static/908d75c1" data-adjuncturl="@JENKINS_URL@/adjuncts/908d75c1"></head><body></body></html>';
+        if (process.env.JENKINS_URL) {
+            content = content.replace('@JENKINS_URL@', process.env.JENKINS_URL);
+        } else {
+            content = content.replace('@JENKINS_URL@', '/jenkins');
+        }
     } else {
         content = _string.trim(content);
         if (!(_string.startsWith(content, '<') && _string.endsWith(content, '>'))) {
