@@ -34,7 +34,6 @@ exports.onPage = function(testFunc, content) {
                     userAgent: 'JasmineTest'
                 };
             }
-            require("window-handle").setWindow(window);
             global.window = window;
             global.document = window.document;            
             global.navigator = window.navigator;            

@@ -1,11 +1,15 @@
 {
   "name": "@jenkins-cd/js-test",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "NPM module containing JavaScript utilities for testing Jenkins CI modules.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "files": [
+    "index.js",
+    "README.md"
+  ],
   "author": "Tom Fennelly <tom.fennelly@gmail.com> (https://github.com/tfennelly)",
   "license": "MIT",
   "repository": {
@@ -15,16 +19,21 @@
   "dependencies": {
     "bootstrap-detached": "^3.3.4-v6",
     "bootstrap-detached-3.3": "^3.3.4-v5",
-    "gulp": "^3.8.11",
     "gulp-jasmine": "^2.0.1",
     "jasmine-reporters": "^2.0.6",
-    "@jenkins-cd/js-builder": "^0.x",
     "jquery-detached": "^2.1.4-v2",
     "jquery-detached-2.1.4": "^2.1.4-v2",
     "jqueryui-detached": "^1.11.4-v8",
     "jqueryui-detached-1.11": "^1.11.4-v4",
     "jsdom": "^5.6.1",
-    "underscore.string": "^3.1.1",
-    "window-handle": "^1.0.0"
+    "underscore.string": "^3.1.1"
+  },
+  "devDependencies": {
+    "gulp": "3.9.1",
+    "@jenkins-cd/js-builder": "0.0.36-beta6"
+  },
+  "peerDependencies": {
+    "gulp": "3.9.1",
+    "@jenkins-cd/js-builder": "0.0.36-beta6"
   }
 }
